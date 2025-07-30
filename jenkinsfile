@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage('checkout'){
             steps{
-                git 'https://github.com/Asthme256/june25-classdemo2.git' 
+                git branch: 'main', url: 'https://github.com/Asthme256/june25-classdemo2.git' 
 
             }
         }
