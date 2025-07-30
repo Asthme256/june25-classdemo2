@@ -1,44 +1,31 @@
-pipeline {
+pipeline{
     agent any
-    environment {
-        VENV = 'venv'
+    environment{
+        VENV='venv'
     }
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/munguriek/june-2025-class-demo-1-django.git'
+    stages{
+        stage('checkout'){
+            steps{
+                git branch: 'main', url: 'https://github.com/Asthme256/june25-classdemo2.git' 
+
             }
         }
-        stage('Set up Virtual Environment') {
-            steps {
+        stage('setup virtual enviroment'){
+            steps{
                 sh '''
                 python3 -m venv $VENV
                 . $VENV/bin/activate
-                pip install --upgrade pip
                 pip install -r requirements.txt
-                '''
+            '''
             }
         }
-        stage('Run Migrations') {
-            steps {
+        stage('run tests'){
+            steps{
                 sh '''
                 . $VENV/bin/activate
-                python manage.py migrate
-                '''
+                pytest
+            '''
             }
-        }
-        stage('Run Tests') {
-            steps {
-                sh '''
-                . $VENV/bin/activate
-                python manage.py test
-                '''
-            }
-        }
-    }
-    post {
-        always {
-            cleanWs()
         }
     }
 }
