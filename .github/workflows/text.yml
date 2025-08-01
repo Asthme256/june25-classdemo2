@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: setup python
-        uses: actions/setup-python@4
+        uses: actions/setup-python@v4
         with:
           python-version: "3.12"
 
@@ -48,6 +48,17 @@ jobs:
         run: |
           echo "linting with pylint..."
           pylint . --ignore=venv,.pytest_cache
+  
+  report:
+    needs: lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: print success message
+        run: echo "all jobs passed. Generating report"
 
 
 
