@@ -1,0 +1,37 @@
+[MASTER]
+ignore=greeting/admin.py,greeting/apps.py,greeting/models.py,greeting/tests.py,greeting/urls.py,greeting/views.py,manage.py
+ignore-patterns=
+init-hook=''
+
+[MESSAGES CONTROL]
+disable=
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring,
+    no-member,
+    too-few-public-methods,
+    too-many-arguments,
+    too-many-instance-attributes,
+    too-many-locals,
+    too-many-branches
+
+[FORMAT]
+max-line-length=100
+
+[REPORTS]
+output-format=colorized
+reports=no
+
+[TYPECHECK]
+ignored-modules=django
+ignored-classes=ForeignKey,ManyToManyField,GenericForeignKey
+
+[DESIGN]
+max-args=6
+max-locals=15
+max-returns=6
+max-branches=12
+max-statements=50
+max-parents=7
+max-attributes=10
+max-public-methods=20
