@@ -16,7 +16,8 @@ disable=
     too-many-branches,
     trailing-whitespace,
     missing-final-newline,
-    trailing-newlines
+    trailing-newlines,
+    unused-import
 
 [FORMAT]
 max-line-length=100
