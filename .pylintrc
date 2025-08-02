@@ -13,7 +13,10 @@ disable=
     too-many-arguments,
     too-many-instance-attributes,
     too-many-locals,
-    too-many-branches
+    too-many-branches,
+    trailing-whitespace,
+    missing-final-newline,
+    trailing-newlines
 
 [FORMAT]
 max-line-length=100
